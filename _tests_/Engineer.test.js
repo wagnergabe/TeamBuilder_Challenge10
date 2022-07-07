@@ -1,4 +1,3 @@
-const { exportAllDeclaration } = require('@babel/types');
 const Engineer = require('../lib/Engineer');
 // const Employee = require('../lib/Employee');
 
@@ -9,5 +8,5 @@ test("Creates a New engineer object", () => {
     expect(engineer.email).toBe("Bob@hotmail.com");
     expect(engineer.role).toBe("Engineer");
     expect(engineer.github).toBe("bobHub");
-})
+});
 
