@@ -42,7 +42,21 @@ inquirer.prompt ([
         "Intern"
     ]
     }  
-  ]);
+  ])
+  .then(function(answer){
+
+    if(answer.role === "Engineer") {
+        answer2 = inquirer.prompt([
+            {
+                type: 'input',
+                message: 'What is their github username?',
+                name: 'github'
+            }
+        ]);
+        const engineer = new Engineer(answer.name, answer.id, answer.email, answer2.github);
+    }
+  })
+
 }
 
 TeamBuilder();
