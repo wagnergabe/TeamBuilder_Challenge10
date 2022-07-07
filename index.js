@@ -3,8 +3,8 @@
 //generate a HTML file via command prompt
 //make sure email and github inputs have links to team member's accounts
 //---(DONE)---Prompts for Team Member's: name, employee ID, email, and office number
-//Prompts divided for Manager | Engineer | Intern
-//Add Team member option after manager
+//---(DONE)---Prompts divided for Manager | Engineer | Intern
+//---(DONE)---Add Team member option after manager
 //generate HTML of selected team members.
 
 const inquirer = require("inquirer");
@@ -57,7 +57,8 @@ inquirer.prompt ([
         .then(answer2 => {
         const engineer = new Engineer(answer.name, answer.id, answer.email, answer.role, answer2.github);
         employeeArray.push(engineer)
-        console.log(employeeArray);
+        // console.log(employeeArray);
+        newEmployee();
         });
 
     } else if (answer.role === "Manager") {
@@ -72,6 +73,7 @@ inquirer.prompt ([
         const manager = new Manager(answer.name, answer.id, answer.email, answer.role, answer2.officeNumber);
         employeeArray.push(manager);
         console.log(employeeArray);
+        newEmployee();
         });
 
     } else if (answer.role === "Intern") {
@@ -86,10 +88,27 @@ inquirer.prompt ([
         const intern = new Intern(answer.name, answer.id, answer.email, answer.role, answer2.school);
         employeeArray.push(intern);
         console.log(employeeArray)
+        newEmployee();
         })
     }
-  }
-)};
+  })
+        newEmployee = () => {
+            inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'addEmployee',
+                    message: 'Would you like to add an additional employee?'
+                }
+            ])
+            .then(response => {
+                if (response.addEmployee) {
+                    TeamBuilder();
+                } else {
+                    console.log(employeeArray);
+                }
+            })
+        }
+};
 
 
 TeamBuilder();
