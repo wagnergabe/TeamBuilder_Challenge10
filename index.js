@@ -10,10 +10,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require ("util");
-// const Manager = require ("./lib/Manager");
-// const Engineer = require ("./lib/Engineer");
-// const Intern = require ("./lib/Intern");
-// const employee = require("./lib/Employee");
+const Manager = require ("./lib/Manager");
+const Engineer = require ("./lib/Engineer");
+const Intern = require ("./lib/Intern");
+const employee = require("./lib/Employee");
 
 TeamBuilder = () => {
 inquirer.prompt ([
@@ -36,11 +36,6 @@ inquirer.prompt ([
     type: 'input',
     message: 'What is their github address?',
     name: 'github'
-    },
-    {
-    type: 'input',
-    message: 'What is their office number?',
-    name: 'officeNumber'
     },
     {
     type:'list',
