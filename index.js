@@ -15,6 +15,8 @@ const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
 const employee = require("./lib/Employee");
 
+employeeArray = [];
+
 TeamBuilder = () => {
 inquirer.prompt ([ 
     {
@@ -43,20 +45,51 @@ inquirer.prompt ([
     ]
     }  
   ])
-  .then(function(answer){
-
+   .then(answer => {
     if(answer.role === "Engineer") {
-        answer2 = inquirer.prompt([
+        inquirer.prompt([
             {
                 type: 'input',
-                message: 'What is their github username?',
+                message: "What is the engineer's github username?",
                 name: 'github'
             }
-        ]);
-        const engineer = new Engineer(answer.name, answer.id, answer.email, answer2.github);
-    }
-  })
+        ])
+        .then(answer2 => {
+        const engineer = new Engineer(answer.name, answer.id, answer.email, answer.role, answer2.github);
+        employeeArray.push(engineer)
+        console.log(employeeArray);
+        });
 
-}
+    } else if (answer.role === "Manager") {
+        inquirer.prompt([
+            {
+                type: 'input',
+                message: "What is the manager's office number?",
+                name: 'officeNumber'
+            }
+        ])
+        .then(answer2 => {
+        const manager = new Manager(answer.name, answer.id, answer.email, answer.role, answer2.officeNumber);
+        employeeArray.push(manager);
+        console.log(employeeArray);
+        });
+
+    } else if (answer.role === "Intern") {
+        inquirer.prompt([
+            {
+                type: 'input',
+                message: "what school does the intern curretnly attend?",
+                name: 'school'
+            }
+        ])
+        .then(answer2 => {
+        const intern = new Intern(answer.name, answer.id, answer.email, answer.role, answer2.school);
+        employeeArray.push(intern);
+        console.log(employeeArray)
+        })
+    }
+  }
+)};
+
 
 TeamBuilder();
