@@ -16,7 +16,7 @@ const Intern = require ("./lib/Intern");
 const employee = require("./lib/Employee");
 
 TeamBuilder = () => {
-inquirer.prompt ([
+inquirer.prompt ([ 
     {
     type: 'input',
     message: "name of employee",
@@ -31,11 +31,6 @@ inquirer.prompt ([
     type: 'input',
     message: "What is their E-mail address?",
     name: 'email'
-    },
-    {
-    type: 'input',
-    message: 'What is their github address?',
-    name: 'github'
     },
     {
     type:'list',
