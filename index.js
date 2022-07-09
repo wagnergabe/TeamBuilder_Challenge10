@@ -22,17 +22,38 @@ inquirer.prompt ([
     {
     type: 'input',
     message: "name of employee",
-    name: "name"
+    name: "name",
+    validate: nameInput => {
+     if (nameInput) {
+        return true;
+     } else {
+        console.log("please provide a name")
+     }
+    }
     },
     {
     type: 'input',
     message: 'What is their eployee ID number?',
-    name: 'id'
+    name: 'id',
+    validate: idInput => {
+        if (idInput) {
+           return true;
+        } else {
+           console.log("please provide an ID number")
+        }
+       }
     },
     {
     type: 'input',
     message: "What is their E-mail address?",
-    name: 'email'
+    name: 'email',
+    validate: emailInput => {
+        if (emailInput) {
+           return true;
+        } else {
+           console.log("please provide an email")
+        }
+       }
     },
     {
     type:'list',
@@ -51,7 +72,14 @@ inquirer.prompt ([
             {
                 type: 'input',
                 message: "What is the engineer's github username?",
-                name: 'github'
+                name: 'github',
+                validate: githubInput => {
+                    if (githubInput) {
+                       return true;
+                    } else {
+                       console.log("please provide a github username")
+                    }
+                   }
             }
         ])
         .then(answer2 => {
@@ -66,7 +94,14 @@ inquirer.prompt ([
             {
                 type: 'input',
                 message: "What is the manager's office number?",
-                name: 'officeNumber'
+                name: 'officeNumber',
+                validate: officeNumberInput => {
+                    if (officeNumberInput) {
+                       return true;
+                    } else {
+                       console.log("please provide an office number")
+                    }
+                   }
             }
         ])
         .then(answer2 => {
@@ -81,7 +116,14 @@ inquirer.prompt ([
             {
                 type: 'input',
                 message: "what school does the intern curretnly attend?",
-                name: 'school'
+                name: 'school',
+                validate: schoolInput => {
+                    if (schoolInput) {
+                       return true;
+                    } else {
+                       console.log("please provide a school")
+                    }
+                   }
             }
         ])
         .then(answer2 => {
