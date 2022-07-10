@@ -71,9 +71,20 @@ const generatePage = function (employeeCards) {
   <title>Team Profile Generator</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<h1>${employeeCards}</h1>
+    <header>
+        <div class = "navbar" id ="navbar">
+            <span class = "navbar-brand mb-1 w-100 text-center bg-danger" 
+            id = "navbar-title"><h1 class="fs-4 text-light">Team Profiles</h1>
+    </span>
+</div>
+</header>
+    <main>
+    <h1>${employeeCards}</h1>
+    </main>
 </body>
 </html>
 `  
