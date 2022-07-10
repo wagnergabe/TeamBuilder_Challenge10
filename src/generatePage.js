@@ -1,3 +1,4 @@
+//Manager Card
 const generateManager = function (manager) {
     return `
     <div class = "col-4">
@@ -16,6 +17,7 @@ const generateManager = function (manager) {
 `;
 }
 
+//Engineer Card
 const generateEngineer = function (engineer) {
     return `
     <div class = "col-4">
@@ -34,6 +36,7 @@ const generateEngineer = function (engineer) {
 `;
 }
 
+//Intern Card
 const generateIntern = function (intern) {
     return `
     <div class = "col-4">
@@ -52,6 +55,7 @@ const generateIntern = function (intern) {
 `;
 }
 
+//Generate cards
 
 generateTeamCards = (data) => {
 
@@ -83,7 +87,7 @@ generateTeamCards = (data) => {
 
     const employeeCards = pageArray.join('');
 
-    // Return to the generated page
+// Return to the generated page
     const generateTeam = generatePage(employeeCards); 
     return generateTeam;
 

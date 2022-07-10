@@ -17,6 +17,8 @@ const generatePage = require('./src/generatePage.js');
 
 const employeeArray = [];
 
+//Questions
+
 const teamBuilder = async () => {
     const answers = await
     inquirer.prompt ([ 
@@ -68,7 +70,7 @@ const teamBuilder = async () => {
     }  
   ])
 
-  
+  //Questions for Manager, Engineer, and Intern
    
     if(answers.role === "Engineer") {
         const engineerPick = await inquirer.prompt([
@@ -130,6 +132,8 @@ const teamBuilder = async () => {
         }
     };
 
+    //Add more employees
+
     async function promptQuestions() {
     await teamBuilder();
 
@@ -152,6 +156,7 @@ const teamBuilder = async () => {
 promptQuestions()            
 
     
+//Write HTML File
     
 function writeFile () {
     fs.writeFileSync('./dist/index.html', generatePage(employeeArray), console.log('success'),
