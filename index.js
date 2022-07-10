@@ -145,6 +145,7 @@ const teamBuilder = async () => {
                     return promptQuestions();
                 } else { 
                     return writeFile();
+    //                 console.log(employeeArray)
     }
 }
 

@@ -1,26 +1,44 @@
-
-const generatePage = (manager) => {
-      return `
-         ${manager.name}
-         ${manager.role}
-         ${manager.id}
-         ${manager.email}
-         ${manager.officeNumber}
-          `
-    };
-
+const generateManager = function (manager) {
+    return `
+    ${manager.name}
+    ${manager.id}
+    ${manager.email}
+    ${manager.email}
+    ${manager.officeNumber}
+`
+}
 
 
-// const selector = [];
+generateTeamCards = (data) => {
 
-// selector.push(team.filter((employee) => employee.getRole() === "Manager")
-//         .map((manager) => generateManager))
+    pageArray = []; 
 
-// return selector;
-// };  
-  
-//     return `
-//     ${generateManager(manager.name)}
-// `
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
 
-  module.exports = generatePage;
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
+        }
+
+    }
+
+    const employeeCards = pageArray
+
+    // Return to the generated page
+    const generateTeam = generatePage(employeeCards); 
+    return generateTeam;
+
+}
+
+// Generate the HTML page
+const generatePage = function (employeeCards) {   
+  return`
+${employeeCards}`
+};
+
+module.exports = generatePage;
+module.exports = generateTeamCards;
+
