@@ -4,7 +4,7 @@ const generateManager = function (manager) {
         <div class = "card h-100">
             <div class = "card-header bg-primary">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4>
+                <h4>Manager<i class="fas fa-bullhorn"></i></i></h4>
             </div>
             <div class = "card-body">
                 <p> ID #: ${manager.id}</p><br>
@@ -82,6 +82,8 @@ const generatePage = function (employeeCards) {
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
     <header>
