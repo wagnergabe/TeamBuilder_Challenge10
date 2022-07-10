@@ -111,7 +111,7 @@ const teamBuilder = async () => {
                 const internPick = await inquirer.prompt([
             {
                 type: 'input',
-                message: "what school does the intern curretnly attend?",
+                message: "what school does the intern currently attend?",
                 name: 'school',
                 validate: schoolInput => {
                     if (schoolInput) {
