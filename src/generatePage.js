@@ -20,11 +20,11 @@ const generateEngineer = function (engineer) {
     return `
     <div class = "col-4">
     <div class = "card h-100">
-        <div class = "card-header bg-light text-white">
+        <div class = "card-header bg-primary text-white">
             <h3>${engineer.name}</h3>
             <h4 class = "d-flex justify-content-between">Engineer<i class="fas fa-desktop"></i></h4>
         </div>
-        <div class = "card-body bg-secondary">
+        <div class = "card-body bg-light">
             <p> ID #: ${engineer.id}</p><br>
             <p> Email: <a href="${engineer.email}">${engineer.email}</a></p><br>
             <p> Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
@@ -36,11 +36,20 @@ const generateEngineer = function (engineer) {
 
 const generateIntern = function (intern) {
     return `
-    ${intern.name}
-    ${intern.id}
-    ${intern.email}
-    ${intern.school}
-    `
+    <div class = "col-4">
+    <div class = "card h-100">
+        <div class = "card-header bg-primary text-white">
+            <h3>${intern.name}</h3>
+            <h4 class = "d-flex justify-content-between">Intern<i class="fas fa-graduation-cap"></i></h4>
+        </div>
+        <div class = "card-body bg-light">
+            <h2> ID #: ${intern.id}</h2><br>
+            <h2> Email: <a href="${intern.email}">${intern.email}</a></h2><br>
+            <h2> School: ${intern.school}</h2>
+        </div>
+    </div>
+</div>
+`;
 }
 
 
@@ -103,7 +112,11 @@ const generatePage = function (employeeCards) {
 </div>
 </header>
     <main>
-    <h1>${employeeCards}</h1>
+        <div class ="container">
+            <div class ="row justify-content-center">
+                ${employeeCards}
+            </div>
+        </div>
     </main>
 </body>
 </html>
