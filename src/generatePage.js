@@ -2,11 +2,11 @@ const generateManager = function (manager) {
     return `
     <div class = "col-4">
         <div class = "card h-100">
-            <div class = "card-header bg-primary">
+            <div class = "card-header bg-primary text-white">
                 <h3>${manager.name}</h3>
-                <h4>Manager<i class="fas fa-bullhorn"></i></i></h4>
+                <h4 class = "d-flex justify-content-between">Manager<i class="fas fa-bullhorn"></i></i></h4>
             </div>
-            <div class = "card-body">
+            <div class = "card-body bg-light">
                 <p> ID #: ${manager.id}</p><br>
                 <p> Email: <a href="${manager.email}">${manager.email}</a></p><br>
                 <p> Office #: ${manager.officeNumber}</p>
@@ -18,11 +18,20 @@ const generateManager = function (manager) {
 
 const generateEngineer = function (engineer) {
     return `
-    ${engineer.name}
-    ${engineer.id}
-    ${engineer.email}
-    ${engineer.github}
-    `
+    <div class = "col-4">
+    <div class = "card h-100">
+        <div class = "card-header bg-light text-white">
+            <h3>${engineer.name}</h3>
+            <h4 class = "d-flex justify-content-between">Engineer<i class="fas fa-desktop"></i></h4>
+        </div>
+        <div class = "card-body bg-secondary">
+            <p> ID #: ${engineer.id}</p><br>
+            <p> Email: <a href="${engineer.email}">${engineer.email}</a></p><br>
+            <p> Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+        </div>
+    </div>
+</div>
+`;
 }
 
 const generateIntern = function (intern) {
