@@ -34,7 +34,7 @@ const teamBuilder = async () => {
     },
     {
     type: 'input',
-    message: 'What is their eployee ID number?',
+    message: 'What is their employee ID number?',
     name: 'id',
     validate: idInput => {
         if (idInput) {
