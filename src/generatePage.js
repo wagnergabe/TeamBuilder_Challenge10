@@ -16,6 +16,15 @@ const generateEngineer = function (engineer) {
     `
 }
 
+const generateIntern = function (intern) {
+    return `
+    ${intern.name}
+    ${intern.id}
+    ${intern.email}
+    ${intern.school}
+    `
+}
+
 
 generateTeamCards = (data) => {
 
@@ -31,10 +40,16 @@ generateTeamCards = (data) => {
             pageArray.push(managerCard);
         }
 
-        else if (role === 'Engineer') {
+        if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
 
             pageArray.push(engineerCard);
+        }
+
+        else if (role === 'Intern') {
+            const studentCard = generateIntern(employee);
+
+            pageArray.push(studentCard);
         }
 
     }
