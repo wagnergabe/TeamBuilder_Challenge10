@@ -9,16 +9,17 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require ("util");
 const Manager = require ("./lib/Manager");
 const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
-const employee = require("./lib/Employee");
+const Employee = require("./lib/Employee");
+const generatePage = require('./src/generatePage');
 
-employeeArray = [];
+const employeeArray = [];
 
-TeamBuilder = () => {
-inquirer.prompt ([ 
+const teamBuilder = async () => {
+    const answers = await
+    inquirer.prompt ([ 
     {
     type: 'input',
     message: "name of employee",
@@ -66,9 +67,11 @@ inquirer.prompt ([
     ]
     }  
   ])
-   .then(answer => {
-    if(answer.role === "Engineer") {
-        inquirer.prompt([
+
+  
+   
+    if(answers.role === "Engineer") {
+        const engineerPick = await inquirer.prompt([
             {
                 type: 'input',
                 message: "What is the engineer's github username?",
@@ -79,19 +82,15 @@ inquirer.prompt ([
                     } else {
                        console.log("please provide a github username")
                     }
-                   }
+                    }
             }
         ])
-        .then(answer2 => {
-        const engineer = new Engineer(answer.name, answer.id, answer.email, answer.role, answer2.github);
-        employeeArray.push(engineer)
-        // console.log(employeeArray);
-        newEmployee();
-        });
+                const newEngineer = new Engineer(answers.name, answers.id, answers.email, engineerPick.github);
+                employeeArray.push(newEngineer)
 
-    } else if (answer.role === "Manager") {
-        inquirer.prompt([
-            {
+                } else if (answers.role === "Manager") {
+                const managerPick = await inquirer.prompt([
+                {
                 type: 'input',
                 message: "What is the manager's office number?",
                 name: 'officeNumber',
@@ -104,15 +103,12 @@ inquirer.prompt ([
                    }
             }
         ])
-        .then(answer2 => {
-        const manager = new Manager(answer.name, answer.id, answer.email, answer.role, answer2.officeNumber);
-        employeeArray.push(manager);
-        console.log(employeeArray);
-        newEmployee();
-        });
+        
+                const newManager = new Manager(answers.name, answers.id, answers.email, managerPick.officeNumber);
+                employeeArray.push(newManager);
 
-    } else if (answer.role === "Intern") {
-        inquirer.prompt([
+                } else if (answers.role === "Intern") {
+                const internPick = await inquirer.prompt([
             {
                 type: 'input',
                 message: "what school does the intern curretnly attend?",
@@ -126,31 +122,40 @@ inquirer.prompt ([
                    }
             }
         ])
-        .then(answer2 => {
-        const intern = new Intern(answer.name, answer.id, answer.email, answer.role, answer2.school);
-        employeeArray.push(intern);
-        console.log(employeeArray)
-        newEmployee();
-        })
-    }
-  })
-        newEmployee = () => {
-            inquirer.prompt([
+        
+        const newIntern = new Intern(answers.name, answers.id, answers.email, internPick.school);
+        employeeArray.push(newIntern);
+
+        
+        }
+    };
+
+    async function promptQuestions() {
+    await teamBuilder();
+
+
+        const newEmployee = await inquirer.prompt([
                 {
                     type: 'confirm',
                     name: 'addEmployee',
                     message: 'Would you like to add an additional employee?'
                 }
             ])
-            .then(response => {
-                if (response.addEmployee) {
-                    TeamBuilder();
-                } else {
-                    console.log(employeeArray);
-                }
-            })
-        }
-};
+            if (newEmployee.addEmployee) {
+                    return promptQuestions();
+                } 
+                    return writeFile();
+    }
+
+promptQuestions()            
+
+    
+    
+function writeFile () {
+    fs.writeFile('./src/index.html', generatePage(employeeArray), 'utf-8'); 
+}
 
 
-TeamBuilder();
+
+
+
