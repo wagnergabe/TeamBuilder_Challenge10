@@ -1,11 +1,11 @@
 //TODO
-//Generate a webpage that displays team's basic info: emails/github profiles
-//generate a HTML file via command prompt
-//make sure email and github inputs have links to team member's accounts
+//---(DONE)---Generate a webpage that displays team's basic info: emails/github profiles
+//---(DONE)---generate a HTML file via command prompt
+//---(DONE)---make sure email and github inputs have links to team member's accounts
 //---(DONE)---Prompts for Team Member's: name, employee ID, email, and office number
 //---(DONE)---Prompts divided for Manager | Engineer | Intern
 //---(DONE)---Add Team member option after manager
-//generate HTML of selected team members.
+//---(DONE)---generate HTML of selected team members.
 
 const inquirer = require("inquirer");
 const fs = require("fs");

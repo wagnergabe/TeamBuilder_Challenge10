@@ -7,9 +7,9 @@ const generateManager = function (manager) {
                 <h4 class = "d-flex justify-content-between">Manager<i class="fas fa-bullhorn"></i></i></h4>
             </div>
             <div class = "card-body bg-light">
-                <p> ID #: ${manager.id}</p><br>
-                <p> Email: <a href="${manager.email}">${manager.email}</a></p><br>
-                <p> Office #: ${manager.officeNumber}</p>
+                <h3> ID #: ${manager.id}</h3><br>
+                <h3> Email: <a href="${manager.email}">${manager.email}</a></h3><br>
+                <h3> Office #: ${manager.officeNumber}</h3>
             </div>
         </div>
     </div>
@@ -25,9 +25,9 @@ const generateEngineer = function (engineer) {
             <h4 class = "d-flex justify-content-between">Engineer<i class="fas fa-desktop"></i></h4>
         </div>
         <div class = "card-body bg-light">
-            <p> ID #: ${engineer.id}</p><br>
-            <p> Email: <a href="${engineer.email}">${engineer.email}</a></p><br>
-            <p> Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+            <h3> ID #: ${engineer.id}</h3><br>
+            <h3> Email: <a href="${engineer.email}">${engineer.email}</a></h3><br>
+            <h3> Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></h3>
         </div>
     </div>
 </div>
@@ -43,9 +43,9 @@ const generateIntern = function (intern) {
             <h4 class = "d-flex justify-content-between">Intern<i class="fas fa-graduation-cap"></i></h4>
         </div>
         <div class = "card-body bg-light">
-            <h2> ID #: ${intern.id}</h2><br>
-            <h2> Email: <a href="${intern.email}">${intern.email}</a></h2><br>
-            <h2> School: ${intern.school}</h2>
+            <h3> ID #: ${intern.id}</h3><br>
+            <h3> Email: <a href="${intern.email}">${intern.email}</a></h3><br>
+            <h3> School: ${intern.school}</h3>
         </div>
     </div>
 </div>
