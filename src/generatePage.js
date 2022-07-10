@@ -1,10 +1,19 @@
 const generateManager = function (manager) {
     return `
-    ${manager.name}
-    ${manager.id}
-    ${manager.email}
-    ${manager.officeNumber}
-`
+    <div class = "col-4">
+        <div class = "card h-100">
+            <div class = "card-header text-center bg-primary">
+                <h3>${manager.name}</h3>
+                <h4>Manager</h4><icon>
+            </div>
+            <div class = "card-body">
+                <p> ID #: ${manager.id}</p><br>
+                <p> Email: ${manager.email}</p><br>
+                <p> Office #: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
+`;
 }
 
 const generateEngineer = function (engineer) {
