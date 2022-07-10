@@ -2,13 +2,13 @@ const generateManager = function (manager) {
     return `
     <div class = "col-4">
         <div class = "card h-100">
-            <div class = "card-header text-center bg-primary">
+            <div class = "card-header bg-primary">
                 <h3>${manager.name}</h3>
-                <h4>Manager</h4><icon>
+                <h4>Manager</h4>
             </div>
             <div class = "card-body">
                 <p> ID #: ${manager.id}</p><br>
-                <p> Email: ${manager.email}</p><br>
+                <p> Email: <a href="${manager.email}">${manager.email}</a></p><br>
                 <p> Office #: ${manager.officeNumber}</p>
             </div>
         </div>
