@@ -2,10 +2,10 @@
 
 ![image](https://user-images.githubusercontent.com/102180936/178161167-8f5ec707-a9fd-4181-8728-8003fe37df8b.png)
 
-# Video Demonstration
+##Video Demonstration
 https://drive.google.com/file/d/1miJ5VnqAUt_ixln1AVVeZ258XM7HchWm/view
 
-#Requirements
+#Requirements <br>
 -GIVEN a command-line application that accepts user input <br>
 -WHEN I am prompted for my team members and their information<br>
 -THEN an HTML file is generated that displays a nicely formatted team roster based on user input<br>
