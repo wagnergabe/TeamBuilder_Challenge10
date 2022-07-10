@@ -13,7 +13,7 @@ const Manager = require ("./lib/Manager");
 const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
 const Employee = require("./lib/Employee");
-const generatePage = require('./src/generatePage');
+const generatePage = require('./src/generatePage.js');
 
 const employeeArray = [];
 
@@ -143,17 +143,21 @@ const teamBuilder = async () => {
             ])
             if (newEmployee.addEmployee) {
                     return promptQuestions();
-                } 
+                } else { 
                     return writeFile();
     }
+}
 
 promptQuestions()            
 
     
     
 function writeFile () {
-    fs.writeFile('./src/index.html', generatePage(employeeArray), 'utf-8'); 
+    fs.writeFileSync('./dist/index.html', generatePage(employeeArray), console.log('success'),
+     (err) =>
+    console.log("error")); 
 }
+
 
 
 
